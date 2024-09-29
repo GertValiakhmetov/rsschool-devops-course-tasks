@@ -15,14 +15,15 @@ permissions:
 jobs:
   terraform-init:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .infra
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-
-      - name: Change work directory
-        run: cd .infra
 
       - name: Log dirs
         run: ls -alhR
