@@ -61,7 +61,7 @@ jobs:
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
         with:
-          path: .terraform*
+          path: .infra/.terraform/*
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
           fail-on-cache-miss: true
 
@@ -81,7 +81,7 @@ jobs:
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
         with:
-          path: .terraform*
+          path: .infra/.terraform/*
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
           fail-on-cache-miss: true
 
@@ -90,9 +90,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::372376449465:role/github-actions-role
           aws-region: us-east-1
-
-      - name: Initialize Terraform
-        run: terraform init
 
       - name: Terraform Plan
         run: terraform plan
