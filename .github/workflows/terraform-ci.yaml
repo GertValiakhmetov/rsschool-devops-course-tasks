@@ -21,6 +21,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Change work directory
+        run: cd .infra
+
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -34,9 +37,6 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-
-      - name: Log dirs
-        run: ls -alhR
 
       - name: Create terraform cache
         uses: actions/cache/save@v4
