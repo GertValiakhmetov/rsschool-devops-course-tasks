@@ -42,7 +42,9 @@ jobs:
       - name: Create terraform cache
         uses: actions/cache/save@v4
         with:
-          path: .infra/.terraform/*
+          path: | 
+            .infra/.terraform/*
+            .infra/.terraform.lock.hcl
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
 
   terraform-check:
@@ -58,7 +60,9 @@ jobs:
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
         with:
-          path: .infra/.terraform/*
+          path: | 
+            .infra/.terraform/*
+            .infra/.terraform.lock.hcl
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
           fail-on-cache-miss: true
 
@@ -82,7 +86,9 @@ jobs:
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
         with:
-          path: .infra/.terraform/*
+          path: | 
+            .infra/.terraform/*
+            .infra/.terraform.lock.hcl
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
           fail-on-cache-miss: true
 
@@ -117,7 +123,9 @@ jobs:
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
         with:
-          path: .infra/.terraform/*
+          path: | 
+            .infra/.terraform/*
+            .infra/.terraform.lock.hcl
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
           fail-on-cache-miss: true
 
