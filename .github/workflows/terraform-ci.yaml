@@ -24,6 +24,9 @@ jobs:
       - name: Change work directory
         run: cd .infra
 
+      - name: Log dirs
+        run: ls -alhR
+
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v3
         with:
