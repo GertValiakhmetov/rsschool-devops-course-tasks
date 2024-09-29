@@ -39,9 +39,6 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Log dirs
-        run: ls -alhR
-
       - name: Create terraform cache
         uses: actions/cache/save@v4
         with:
@@ -88,6 +85,10 @@ jobs:
           path: .infra/.terraform/*
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
           fail-on-cache-miss: true
+
+      - name: Log dirs
+        run: ls -alhR
+
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
