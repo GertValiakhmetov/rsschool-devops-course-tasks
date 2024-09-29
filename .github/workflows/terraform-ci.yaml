@@ -18,7 +18,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v3
@@ -50,7 +51,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
@@ -69,7 +71,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
@@ -98,7 +101,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Restore terraform cache
         uses: actions/cache/restore@v4
