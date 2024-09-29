@@ -30,18 +30,16 @@ jobs:
           role-to-assume: arn:aws:iam::372376449465:role/github-actions-role
           aws-region: us-east-1
 
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: ${{ env.TERRAFORM_VERSION }}
-
       - name: Terraform Init
         run: terraform init
+
+      - name: Log dirs
+        run: ls -R
 
       - name: Create terraform cache
         uses: actions/cache/save@v4
         with:
-          path: .terraform*
+          path: .terraform/*
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
 
   terraform-check:
