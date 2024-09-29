@@ -36,7 +36,7 @@ jobs:
         run: terraform init
 
       - name: Log dirs
-        run: ls -R
+        run: ls -alhR
 
       - name: Create terraform cache
         uses: actions/cache/save@v4
