@@ -45,7 +45,7 @@ jobs:
       - name: Create terraform cache
         uses: actions/cache/save@v4
         with:
-          path: .terraform/*
+          path: .infra/.terraform/*
           key: terraform-cache-${{ runner.os }}-${{ github.run_id }}
 
   terraform-check:
