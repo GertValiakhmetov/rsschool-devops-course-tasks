@@ -24,4 +24,4 @@
 - Define and apply IAM permission policies for this role, also add `AmazonDynamoDBFullAccess` IAM permission to have
 access for operations under dynamoDB lock table.  
 10. Create github workflow:
-- Define init, check, plan and apply jobs. Also cash all needed resources.
+- Define init, check, plan and apply jobs. Also cache all needed resources.
